@@ -1,6 +1,22 @@
-<header>
-    <h1>{{title}}</h1>
-    <a href="/">Weather</a>
-    <a href="/about">About</a>
-    <a href="/help">Help</a>
-</header>
+<nav id="headerNavbar" class="navbar navbar-light bg-transparent rounded">
+    <a class="navbar-brand" href="/">
+        <div id="weatherpageLogo">
+            <svg id="weatherpageIcon" class="bi bi-cloud-fill" width="1em" height="1em" viewBox="0 0 16 16"
+                fill="#0895c4" xmlns="http://www.w3.org/2000/svg">
+                <path fill-rule="evenodd"
+                    d="M3.5 13a3.5 3.5 0 11.59-6.95 5.002 5.002 0 119.804 1.98A2.5 2.5 0 0113.5 13h-10z"
+                    clip-rule="evenodd" />
+            </svg>
+            <span id="weatherpageWeather"> weather</span><span id="weatherpagePage">page</span>
+        </div>
+    </a>
+
+    <ul class="nav nav-pills mr-auto">
+        <li class="nav-item">
+            <a class="nav-link" href="/about">About</a>
+        </li>
+        <li class="nav-item">
+            <a class="nav-link" href="/help">Help</a>
+        </li>
+    </ul>
+</nav>
