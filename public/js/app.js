@@ -19,7 +19,7 @@ weatherform.addEventListener("submit", (e) => {
                 messageOne.textContent = data.error;
             } else {
                 messageOne.textContent = data.location;
-                messageTwo.textContent = `${data.temperature} : Feels like ${data.feelslike}`;
+                messageTwo.textContent = `${data.weather_descriptions[0]}. It is ${data.temperature} degrees.`;
             }
         });
     });

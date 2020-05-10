@@ -19,7 +19,9 @@ footer {
 
 header {
     margin-top: 16px;
-    margin-bottom: 48px;
+    margin-bottom: 24px;
+    padding-bottom: 12px;
+    border-bottom: 1px solid #eeeeee;
 }
 
 h1 {
