@@ -46,19 +46,20 @@ app.get("/weather", (req, res) => {
         });
     }
 
-    geocode(req.query.address, (err, { latitude, longitude } = {}) => {
-        if (err) {
-            return res.send({ err });
+    geocode(req.query.address, (error, { latitude, longitude } = {}) => {
+        if (error) {
+            return res.send({ error });
         } else {
-            forecast(latitude, longitude, (err, { observation_time, temperature, feelslike, weather_descriptions }) => {
-                if (err) {
-                    return res.send({ err });
+            forecast(latitude, longitude, (error, data) => {
+                if (error) {
+                    return res.send({ error });
                 } else {
                     res.send({
-                        observation_time,
-                        temperature,
-                        feelslike,
-                        weather_descriptions,
+                        location: `${data.location.name}, ${data.location.region}, ${data.location.country}`,
+                        observation_time: data.current.observation_time,
+                        temperature: data.current.temperature,
+                        feelslike: data.current.feelslike,
+                        weather_descriptions: data.current.weather_descriptions,
                     });
                 }
             });

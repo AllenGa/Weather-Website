@@ -40,6 +40,15 @@ body {
     color: #0895c4;
 }
 
+#message-1 {
+    font-weight: 700;
+    color: #0895c4;
+}
+
+#message-2 {
+    color: #0895c4;
+}
+
 footer {
     color: #888888;
     border-top: 1px solid #eeeeee;
@@ -54,6 +63,7 @@ footer {
 
 input {
     border: 1px solid #0895c4;
+    color: #0895c4;
     padding: 8px;
 }
 

@@ -13,7 +13,7 @@ const forecast = (latitude, longitude, callback) => {
             } else if ((body.error, undefined)) {
                 callback(body.error.info, undefined);
             } else {
-                callback(undefined, body.current);
+                callback(undefined, body);
             }
         }
     );
