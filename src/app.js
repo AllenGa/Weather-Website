@@ -22,6 +22,7 @@ app.get("", (req, res) => {
     res.render("index", {
         title: "Weather App",
         name: "Allen",
+        error: undefined,
     });
 });
 
@@ -51,16 +52,18 @@ app.get("/weather", (req, res) => {
         if (error) {
             return res.send({ error });
         } else {
-            forecast(latitude, longitude, (error, data) => {
+            forecast(latitude, longitude, (error, { location, current, forecast }) => {
                 if (error) {
                     return res.send({ error });
                 } else {
+                    //parses return data
+
                     res.send({
-                        location: `${data.location.name}, ${data.location.region}, ${data.location.country}`,
-                        observation_time: data.current.observation_time,
-                        temperature: data.current.temperature,
-                        feelslike: data.current.feelslike,
-                        weather_descriptions: data.current.weather_descriptions,
+                        location: `${location.name}, ${location.region}, ${location.country}`,
+                        // observation_time: data.current.observation_time,
+                        // temperature: data.current.temperature,
+                        // feelslike: data.current.feelslike,
+                        // weather_descriptions: data.current.weather_descriptions,
                     });
                 }
             });
